@@ -1,6 +1,6 @@
 import axios from "axios";
-import { setResponseValid, setResponseInvalid } from "../utils";
-import { baseRoute } from "./constants";
+import { setResponseValid, setResponseInvalid } from "../utils/index.js";
+import { baseRoute } from "./constants.js";
 import { MESSAGES, TIMEOUT, options } from "../constants.js";
 
 const MembersDetail = async (req, res) => {

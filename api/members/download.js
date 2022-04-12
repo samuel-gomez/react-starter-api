@@ -1,4 +1,4 @@
-import { setResponseInvalid, TIMEOUT, TIMEOUTOVER } from "../utils";
+import { setResponseInvalid, TIMEOUT, TIMEOUTOVER } from "../utils/index.js";
 
 const downloadDetails = (req, res) => {
   const { id } = req.params;

@@ -1,1 +1,1 @@
-export { default as people } from './list';
+export { default as people } from './list.js';
