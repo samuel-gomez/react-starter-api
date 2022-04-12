@@ -22,7 +22,7 @@ const downloadDetails = (req, res) => {
          // res.send(setResponseValid({ data: [], label: "Téléchargement du fichier csv" }));
         // res.sendFile("details.csv", { root: "./public" });       
         console.log('__dirname', __dirname)
-        res.sendFile("details.csv", { root: path.join(__dirname, "./public") });       
+        res.sendFile("details.csv", { root: path.join(__dirname, "../../public") });       
         break;
     }
   }, timeOut);
