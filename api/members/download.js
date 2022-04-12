@@ -1,4 +1,8 @@
 import path from 'path';
+import { fileURLToPath } from 'url';
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 import { setResponseInvalid, setResponseValid, TIMEOUT, TIMEOUTOVER } from "../utils/index.js";
 
 const downloadDetails = (req, res) => {
@@ -15,8 +19,9 @@ const downloadDetails = (req, res) => {
         break;
       default:
 
-        // res.send(setResponseValid({ data: [], label: "Téléchargement du fichier csv" }));
+         // res.send(setResponseValid({ data: [], label: "Téléchargement du fichier csv" }));
         // res.sendFile("details.csv", { root: "./public" });       
+        console.log('__dirname', __dirname)
         res.sendFile("details.csv", { root: path.join(__dirname, "./public") });       
         break;
     }
