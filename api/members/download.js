@@ -18,10 +18,6 @@ const downloadDetails = (req, res) => {
         res.status(404).send(setResponseInvalid({ code: 404 }));
         break;
       default:
-
-         // res.send(setResponseValid({ data: [], label: "Téléchargement du fichier csv" }));
-        // res.sendFile("details.csv", { root: "./public" });       
-        console.log('__dirname', __dirname)
         res.sendFile("details.csv", { root: path.join(__dirname, "../../public") });       
         break;
     }
