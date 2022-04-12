@@ -1,3 +1,4 @@
+import path from 'path';
 import { setResponseInvalid, setResponseValid, TIMEOUT, TIMEOUTOVER } from "../utils/index.js";
 
 const downloadDetails = (req, res) => {
@@ -15,7 +16,8 @@ const downloadDetails = (req, res) => {
       default:
 
         // res.send(setResponseValid({ data: [], label: "Téléchargement du fichier csv" }));
-        res.sendFile("details.csv", { root: "./public" });       
+        // res.sendFile("details.csv", { root: "./public" });       
+        res.sendFile("details.csv", { root: path.join(__dirname, "./public") });       
         break;
     }
   }, timeOut);
