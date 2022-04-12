@@ -1,4 +1,4 @@
-import { setResponseInvalid, TIMEOUT, TIMEOUTOVER } from "../utils/index.js";
+import { setResponseInvalid, setResponseValid, TIMEOUT, TIMEOUTOVER } from "../utils/index.js";
 
 const downloadDetails = (req, res) => {
   const { id } = req.params;
@@ -13,7 +13,9 @@ const downloadDetails = (req, res) => {
         res.status(404).send(setResponseInvalid({ code: 404 }));
         break;
       default:
-        res.sendFile("details.csv", { root: "public" });       
+
+        res.send(setResponseValid({ data: [], label: "Téléchargement du fichier csv" }));
+        // res.sendFile("details.csv", { root: "public" });       
         break;
     }
   }, timeOut);
