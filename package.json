@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "type": "module",
+  "engines": {
+    "node" : "17.x"
+  },
   "main": "src/server.js",
   "scripts": {
     "start": "nodemon --experimental-specifier-resolution=node index",
