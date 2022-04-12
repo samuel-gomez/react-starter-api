@@ -4,8 +4,8 @@ import bodyParser from "body-parser";
 import cors from "cors";
 const { PORT = '80' } = process.env;
 import { API } from './api/constants.js';
-import { members, membersDetail, membersSearch, downloadDetails } from './api/members';
-import { people } from './api/people';
+import { members, membersDetail, membersSearch, downloadDetails } from './api/members/index.js';
+import { people } from './api/people/index.js';
 
 const app = express();
 const router = express.Router();
