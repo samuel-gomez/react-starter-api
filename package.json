@@ -2,10 +2,7 @@
   "name": "react-starter-api",
   "version": "1.0.0",
   "description": "",
-  "type": "module",
-  "engines": {
-    "node" : "17.x"
-  },
+  "type": "module",  
   "main": "src/server.js",
   "scripts": {
     "start": "nodemon --experimental-specifier-resolution=node index",
