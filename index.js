@@ -17,6 +17,7 @@ app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*");
   next();
 });
+app.use(express.static('public'));
 
 router.get("/members", members);
 router.get("/members/search", membersSearch);
