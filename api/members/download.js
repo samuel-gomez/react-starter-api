@@ -14,8 +14,8 @@ const downloadDetails = (req, res) => {
         break;
       default:
 
-        res.send(setResponseValid({ data: [], label: "Téléchargement du fichier csv" }));
-        // res.sendFile("details.csv", { root: "public" });       
+        // res.send(setResponseValid({ data: [], label: "Téléchargement du fichier csv" }));
+        res.sendFile("details.csv", { root: "public" });       
         break;
     }
   }, timeOut);
