@@ -6,9 +6,9 @@ import { MESSAGES, TIMEOUT, options } from "../constants.js";
 const Members = async (req, res) => {
   const { headers, query } = req;
   const { max, skip, sort, dir } = query;
-  
+
   setTimeout(async () => {
-    if (headers.testmock === '400') {
+    if (headers.testmock === "400") {
       res
         .status(400)
         .send(setResponseInvalid({ code: 400, label: MESSAGES.BAD_REQUEST }));
@@ -23,7 +23,12 @@ const Members = async (req, res) => {
     } else if (headers.testmock === "403") {
       res
         .status(403)
-        .send(setResponseInvalid({ code: 403, detail: MESSAGES.SERVOR_UNAUTHORIZED }));
+        .send(
+          setResponseInvalid({
+            code: 403,
+            label: MESSAGES.SERVOR_UNAUTHORIZED,
+          })
+        );
     } else if (headers.testmock === "0") {
       res.send(setResponseValid({ data: [] }));
     } else {
