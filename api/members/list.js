@@ -21,16 +21,25 @@ const Members = async (req, res) => {
         .status(404)
         .send(setResponseInvalid({ code: 404, label: MESSAGES.NOT_FOUND }));
     } else if (headers.testmock === "403") {
-      res
-        .status(403)
-        .send(
-          setResponseInvalid({
-            code: 403,
-            label: MESSAGES.SERVOR_UNAUTHORIZED,
-          })
-        );
+      res.status(403).send(
+        setResponseInvalid({
+          code: 403,
+          label: MESSAGES.SERVOR_UNAUTHORIZED,
+        })
+      );
     } else if (headers.testmock === "0") {
-      res.send(setResponseValid({ data: [] }));
+      res.send(
+        setResponseValid({
+          data: {
+            data: [],
+            totals: {
+              total: 0,
+              currentPage: 1,
+              numberPages: 1,
+            },
+          },
+        })
+      );
     } else {
       const { data } = await axios(
         `${baseRoute}?totals=true&q={}&max=${max}&skip=${skip}&sort=${sort}&dir=${dir}`,
