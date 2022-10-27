@@ -24,7 +24,7 @@ const Convert = async (req, res) => {
         `${baseRoute}&base_currency=${base_currency}`,
         options,
       );
-      res.send(setResponseValid({ data }));
+      res.send(data);
     }
   }, TIMEOUT);
 };
