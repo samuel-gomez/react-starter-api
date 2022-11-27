@@ -2,7 +2,7 @@ import axios from 'axios';
 import { setResponseValid, setResponseInvalid } from '../utils/index.js';
 import { baseRoute } from './constants.js';
 import { MESSAGES, TIMEOUT, options } from '../constants.js';
-import data from './mocks';
+import data from './mocks/index.js';
 
 const Convert = async (req, res) => {
   const { base_currency } = req.params;
