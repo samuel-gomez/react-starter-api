@@ -2,6 +2,7 @@ import axios from 'axios';
 import { setResponseValid, setResponseInvalid } from '../utils/index.js';
 import { baseRoute } from './constants.js';
 import { MESSAGES, TIMEOUT, options } from '../constants.js';
+import data from './mocks';
 
 const Convert = async (req, res) => {
   const { base_currency } = req.params;
@@ -20,11 +21,12 @@ const Convert = async (req, res) => {
         .status(404)
         .send(setResponseInvalid({ code: 404, label: MESSAGES.NOT_FOUND }));
     } else {
-      const { data } = await axios(
+      /* const { data } = await axios(
         `${baseRoute}&base_currency=${base_currency}`,
         options,
       );
-      res.send(data);
+      res.send(data); */
+      res.send(setResponseValid({ data: data[base_currency] }));
     }
   }, TIMEOUT);
 };
