@@ -2,14 +2,14 @@ import axios from 'axios';
 import { setResponseValid, setResponseInvalid } from '../utils/index.js';
 import { baseRoute } from './constants.js';
 import { MESSAGES, TIMEOUT, options } from '../constants.js';
-import { EUR, CHF, GBP, USD } from './mocks/index.js';
+// import { EUR, CHF, GBP, USD } from './mocks/index.js';
 
-const data = {
+/* const data = {
   EUR,
   CHF,
   GBP,
   USD,
-};
+}; */
 
 const Convert = async (req, res) => {
   const { base_currency } = req.params;
@@ -33,7 +33,7 @@ const Convert = async (req, res) => {
         options,
       );
       res.send(data); */
-      res.send(setResponseValid({ data: data[base_currency] }));
+      res.send(setResponseValid({ data: { test: 'test' } }));
     }
   }, TIMEOUT);
 };
