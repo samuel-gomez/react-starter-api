@@ -33,8 +33,8 @@ const Convert = async (req, res) => {
         options,
       );
       res.send(data); */
-      console.log(data[base_currency]);
-      res.send(setResponseValid({ data: data[base_currency] }));
+
+      res.send(data[base_currency]);
     }
   }, TIMEOUT);
 };
