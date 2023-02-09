@@ -13,6 +13,7 @@ const data = {
 
 const Convert = async (req, res) => {
   const { base_currency } = req.params;
+  const { currencies } = req.query;
 
   setTimeout(async () => {
     if (base_currency === '400') {
