@@ -2,6 +2,7 @@ import axios from "axios";
 import { setResponseValid, setResponseInvalid } from "../utils/index.js";
 import { baseRoute } from "./constants.js";
 import { MESSAGES, TIMEOUT, options } from "../constants.js";
+import data from './data.js';
 
 const MembersSearch = async (req, res) => {
   const { query } = req;
@@ -29,10 +30,10 @@ const MembersSearch = async (req, res) => {
     } else if (name === "empty") {
       res.send(setResponseValid({ data: [] }));
     } else {
-      const { data } = await axios(
+     /*  const { data } = await axios(
         `${baseRoute}?q={ "$or": [ { "firstname": {"$regex" :"${name}"} }, { "lastname": {"$regex" :"${name}"} } ] }`,
         options
-      );
+      ); */
       res.send(setResponseValid({ data }));
     }
   }, TIMEOUT);
