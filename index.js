@@ -20,6 +20,7 @@ import {
 } from './api/members/index.js';
 import { people } from './api/people/index.js';
 import { convert } from './api/currency/index.js';
+import { submitForm } from './api/app/index.js';
 
 const app = express();
 const router = express.Router();
@@ -42,6 +43,7 @@ router.get(`/members/:id`, membersDetail);
 router.get(`/members/:id/download-detail`, downloadDetails);
 router.get(`/people`, people);
 router.get(`/convert/:base_currency`, convert);
+router.post(`/form`, submitForm);
 
 app.use(`/${API}`, router);
 
