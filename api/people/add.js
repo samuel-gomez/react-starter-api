@@ -5,7 +5,7 @@ const AddPeople = async (req, res) => {
   const { body } = req;
   let hasError = false;
 
-  if (!body.firsname || !body.lastname || !body.email || !body.manager) {
+  if (!body.firstname || !body.lastname || !body.email || !body.manager) {
     hasError = true;
   }
   setTimeout(async () => {
