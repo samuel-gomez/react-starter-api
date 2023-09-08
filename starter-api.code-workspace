@@ -1,0 +1,20 @@
+{
+  "folders": [
+    {
+      "path": "."
+    }
+  ],
+  "settings": {
+    "sonarlint.connectedMode.project": {
+      "connectionId": "SonarCloud",
+      "projectKey": "samuel-gomez_react-starter-vitejs"
+    },
+    "workbench.colorCustomizations": {
+      "activityBar.background": "#190549",
+      "titleBar.activeBackground": "#35019d",
+      "titleBar.activeForeground": "#e1bfff"
+    },
+    "typescript.tsdk": "node_modules/typescript/lib",
+    "liveServer.settings.port": 5501
+  }
+}
