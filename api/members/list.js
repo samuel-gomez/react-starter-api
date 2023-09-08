@@ -2,7 +2,7 @@ import axios from "axios";
 import { setResponseValid, setResponseInvalid } from "../utils/index.js";
 import { baseRoute } from "./constants.js";
 import { MESSAGES, TIMEOUT, options } from "../constants.js";
-import data from './data.js';
+// import data from './data.js';
 
 const Members = async (req, res) => {
   const { headers, query } = req;
@@ -42,19 +42,23 @@ const Members = async (req, res) => {
         })
       );
     } else {
-      /* const { data } = await axios(
+      const { data } = await axios(
         `${baseRoute}?totals=true&q={}&max=${max}&skip=${skip}&sort=${sort}&dir=${dir}`,
         options
-      ); */
-      res.send(setResponseValid({ data: {
-        totals: {
-          total:1,
-          count:1,
-          skip: 0,
-          max: 1
-        },
-        data
-      } }));
+      );
+      res.send(
+        setResponseValid({
+          data: {
+            totals: {
+              total: 1,
+              count: 1,
+              skip: 0,
+              max: 1,
+            },
+            data,
+          },
+        })
+      );
     }
   }, TIMEOUT);
 };

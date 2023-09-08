@@ -15,6 +15,7 @@ import { API } from "./api/constants.js";
 import {
   members,
   membersDetail,
+  membersAdd,
   membersSearch,
   downloadDetails,
 } from "./api/members/index.js";
@@ -40,6 +41,7 @@ app.use(express.static("public"));
 router.get(`/members`, members);
 router.get(`/members/search`, membersSearch);
 router.get(`/members/:id`, membersDetail);
+router.post(`/members/add`, membersAdd);
 router.get(`/members/:id/download-detail`, downloadDetails);
 router.get(`/people`, people);
 router.post(`/people/add`, addPeople);
