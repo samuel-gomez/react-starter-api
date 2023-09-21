@@ -28,13 +28,21 @@ const app = express();
 const router = express.Router();
 
 // app.use(cors());
+
+var whitelist = [
+  "http://localhost:3000",
+  "https://react-starter-vitejs.netlify.app/",
+];
 app.use(
   cors({
     credentials: true,
-    origin: [
-      "http://localhost:3000",
-      "https://react-starter-vitejs.netlify.app/",
-    ],
+    origin: function (origin, callback) {
+      if (whitelist.indexOf(origin) !== -1) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
   })
 );
 /* app.use(
