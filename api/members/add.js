@@ -2,7 +2,12 @@ import { setResponseValid, setResponseInvalid } from "../utils/index.js";
 import { MESSAGES, TIMEOUT } from "../constants.js";
 
 const MembersAdd = async (req, res) => {
+  // si credential: indclude
+  // const reqBody = JSON.parse(req.body);
+  // const { firstname } = reqBody;
+
   const { firstname } = req.body;
+  console.log("reqbody", req.body);
 
   setTimeout(async () => {
     if (firstname === "400") {
@@ -18,7 +23,12 @@ const MembersAdd = async (req, res) => {
         .status(404)
         .send(setResponseInvalid({ code: 404, label: MESSAGES.NOT_FOUND }));
     } else {
-      res.send(setResponseValid({ data: { ...req.body } }));
+      // res.send({ ...req.body });
+      res.send(
+        setResponseValid({
+          data: req.body,
+        })
+      );
     }
   }, TIMEOUT);
 };
