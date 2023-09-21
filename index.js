@@ -10,7 +10,8 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 /* for dirname ES module */
 
-const { PORT = "80", ORIGIN = "http://localhost:3000" } = process.env;
+const { PORT = "80", ORIGIN } = process.env;
+
 import { API } from "./api/constants.js";
 import {
   members,
@@ -30,7 +31,10 @@ const router = express.Router();
 app.use(
   cors({
     credentials: true,
-    origin: ORIGIN,
+    origin: [
+      "http://localhost:3000",
+      "https://react-starter-vitejs.netlify.app/",
+    ],
   })
 );
 /* app.use(
