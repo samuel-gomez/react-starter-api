@@ -33,7 +33,7 @@ var whitelist = [
   "http://localhost:3000",
   "https://react-starter-vitejs.netlify.app/",
 ];
-app.use(
+/* app.use(
   cors({
     credentials: true,
     origin: function (origin, callback) {
@@ -44,14 +44,13 @@ app.use(
       }
     },
   })
-);
-/* app.use(
+); */
+app.use(
   cors({
     credentials: true,
-    origin: "http://localhost:3000",
-    exposedHeaders: ["Content-type", "x-sso"],
+    origin: "https://react-starter-vitejs.netlify.app",
   })
-); */
+);
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use((req, res, next) => {
