@@ -48,7 +48,7 @@ var whitelist = [
 app.use(
   cors({
     credentials: true,
-    origin: "https://react-starter-vitejs.netlify.app",
+    origin: whitelist,
   })
 );
 app.use(bodyParser.urlencoded({ extended: true }));
