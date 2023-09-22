@@ -10,7 +10,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 /* for dirname ES module */
 
-const { PORT = "80", ORIGIN } = process.env;
+const { PORT = "80" } = process.env;
 
 import { API } from "./api/constants.js";
 import {
@@ -27,24 +27,12 @@ import { submitForm } from "./api/app/index.js";
 const app = express();
 const router = express.Router();
 
-// app.use(cors());
-
 var whitelist = [
   "https://react-starter-vitejs.netlify.app",
+  "https://react-starter-toolkit.netlify.app",
   "http://localhost:3000",
 ];
-/* app.use(
-  cors({
-    credentials: true,
-    origin: function (origin, callback) {
-      if (whitelist.indexOf(origin) !== -1) {
-        callback(null, true);
-      } else {
-        callback(new Error("Not allowed by CORS"));
-      }
-    },
-  })
-); */
+
 app.use(
   cors({
     credentials: true,
@@ -53,15 +41,6 @@ app.use(
 );
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-app.use((req, res, next) => {
-  // res.header("Access-Control-Allow-Origin", "*");
-  // res.header("Access-Control-Allow-Origin", whitelist);
-  // res.header("Access-Control-Allow-Credentials", true);
-  // res.header("Access-Control-Allow-Headers", "x-sso");
-  // res.header("Access-Control-Expose-Headers", "x-sso");
-
-  next();
-});
 
 app.set("view engine", "pug");
 app.set("views", __dirname + "/views");
