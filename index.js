@@ -30,8 +30,8 @@ const router = express.Router();
 // app.use(cors());
 
 var whitelist = [
+  "https://react-starter-vitejs.netlify.app",
   "http://localhost:3000",
-  "https://react-starter-vitejs.netlify.app/",
 ];
 /* app.use(
   cors({
@@ -55,8 +55,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use((req, res, next) => {
   // res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Origin", whitelist);
-  res.header("Access-Control-Allow-Credentials", true);
+  // res.header("Access-Control-Allow-Origin", whitelist);
+  // res.header("Access-Control-Allow-Credentials", true);
   // res.header("Access-Control-Allow-Headers", "x-sso");
   // res.header("Access-Control-Expose-Headers", "x-sso");
 
