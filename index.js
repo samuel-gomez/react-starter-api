@@ -2,6 +2,7 @@ import "dotenv/config";
 import express from "express";
 import bodyParser from "body-parser";
 import cors from "cors";
+import { WebSocketServer } from "ws";
 
 /* for dirname ES module */
 import path from "path";
@@ -21,12 +22,14 @@ import {
   downloadDetails,
 } from "./api/members/index.js";
 import { people, addPeople } from "./api/people/index.js";
+import { meteo } from "./api/meteo/index.js";
 import { convert } from "./api/currency/index.js";
 import { submitForm } from "./api/app/index.js";
 
 const app = express();
 const router = express.Router();
 
+/* 
 var whitelist = [
   "https://react-starter-vitejs.netlify.app",
   "https://react-starter-toolkit.netlify.app",
@@ -39,8 +42,31 @@ app.use(
     origin: whitelist,
   })
 );
+ */
+
+app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+
+// permet de rendre disponible une valeur dans le header de la réponse
+/* 
+app.use((req, res, next) => {
+  res.append("toto", "sam");
+  next();
+});
+
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Headers", "toto");
+  res.header("Access-Control-Expose-Headers", "toto");
+  next();
+}); 
+
+côté front il faut faire :
+
+const response = await fetchFn(url, config);
+console.log(response.headers.get('toto'));
+
+*/
 
 app.set("view engine", "pug");
 app.set("views", __dirname + "/views");
@@ -55,6 +81,7 @@ router.get(`/people`, people);
 router.post(`/people/add`, addPeople);
 router.get(`/convert/:base_currency`, convert);
 router.post(`/form`, submitForm);
+router.get(`/meteo/:capitalName`, meteo);
 
 app.use(`/${API}`, router);
 
@@ -69,3 +96,13 @@ app.get("/about", (req, res) => {
 });
 
 app.listen(PORT, () => console.log(`Server is running on port ${PORT}`));
+
+const wss = new WebSocketServer({ port: 8080 });
+
+wss.on("connection", function connection(ws) {
+  ws.on("message", function message(data) {
+    console.log("received: %s", data);
+  });
+
+  ws.send("something");
+});
