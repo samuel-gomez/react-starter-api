@@ -21,7 +21,7 @@ import {
   membersSearch,
   downloadDetails,
 } from "./api/members/index.js";
-import { people, addPeople } from "./api/people/index.js";
+import { people, addPeople, detailPeople } from "./api/people/index.js";
 import { meteo } from "./api/meteo/index.js";
 import { convert } from "./api/currency/index.js";
 import { submitForm } from "./api/app/index.js";
@@ -77,8 +77,11 @@ router.get(`/members/search`, membersSearch);
 router.get(`/members/:id`, membersDetail);
 router.post(`/members/add`, membersAdd);
 router.get(`/members/:id/download-detail`, downloadDetails);
+
 router.get(`/people`, people);
 router.post(`/people/add`, addPeople);
+router.get(`/people/:id`, detailPeople);
+
 router.get(`/convert/:base_currency`, convert);
 router.post(`/form`, submitForm);
 router.get(`/meteo/:capitalName`, meteo);
