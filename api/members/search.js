@@ -2,7 +2,7 @@ import axios from "axios";
 import { setResponseValid, setResponseInvalid } from "../utils/index.js";
 import { baseRoute } from "./constants.js";
 import { MESSAGES, TIMEOUT, options } from "../constants.js";
-import data from './data.js';
+// import data from './data.js';
 
 const MembersSearch = async (req, res) => {
   const { query } = req;
@@ -16,7 +16,7 @@ const MembersSearch = async (req, res) => {
     } else if (name === "500") {
       res
         .status(500)
-        .send(setResponseInvalid({ label: MESSAGES.SERVOR_ERROR }));
+        .send(setResponseInvalid({ label: "MESSAGES.SERVOR_ERROR" }));
     } else if (name === "404") {
       res
         .status(404)
@@ -30,11 +30,27 @@ const MembersSearch = async (req, res) => {
     } else if (name === "empty") {
       res.send(setResponseValid({ data: [] }));
     } else {
-     /*  const { data } = await axios(
+      const { data } = await axios(
         `${baseRoute}?q={ "$or": [ { "firstname": {"$regex" :"${name}"} }, { "lastname": {"$regex" :"${name}"} } ] }`,
         options
-      ); */
-      res.send(setResponseValid({ data }));
+      );
+      res.send(
+        setResponseValid({
+          data: [
+            ...data,
+            {
+              _id: "error500",
+              firstname: "error500",
+              lastname: "error500",
+              created: "2020-01-27T00:00:00.000Z",
+              birthdate: "1990-02-14T00:00:00.000Z",
+              status: true,
+              email: "error500@behance.net",
+              sexe: "M",
+            },
+          ],
+        })
+      );
     }
   }, TIMEOUT);
 };
