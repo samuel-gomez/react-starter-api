@@ -4,7 +4,7 @@ export default [
     contractNumber: "0013336312",
     date: "Sat Jun 06 2009 00:00:00 GMT+0200 (heure d’été d’Europe centrale)",
     agencyName: "Agence de la place",
-    adresse: "121 boulevard de l'ouest, Lyon",
+    address: "121 boulevard de l'ouest, Lyon",
     phone: "04 28 01 93 47",
   },
   {
@@ -12,7 +12,7 @@ export default [
     contractNumber: "0100222538",
     date: "Wed Oct 08 2008 00:00:00 GMT+0200 (heure d’été d’Europe centrale)",
     agencyName: "Agence du Pont neuf",
-    adresse: "186 boulevard de l'ouest, Toulouse",
+    address: "186 boulevard de l'ouest, Toulouse",
     phone: "03 66 54 49 38",
   },
   {
@@ -20,7 +20,7 @@ export default [
     contractNumber: "0112424730",
     date: "Wed May 01 2002 00:00:00 GMT+0200 (heure d’été d’Europe centrale)",
     agencyName: "Agence du Pont neuf",
-    adresse: "177 rue de Lille, Toulouse",
+    address: "177 rue de Lille, Toulouse",
     phone: "04 22 67 26 47",
   },
   {
@@ -28,7 +28,7 @@ export default [
     contractNumber: "0010030767",
     date: "Sat Oct 21 2000 02:00:00 GMT+0200 (heure d’été d’Europe centrale)",
     agencyName: "Agence du centre",
-    adresse: "131 avenue de Marcq, Neuville",
+    address: "131 avenue de Marcq, Neuville",
     phone: "01 72 31 03 41",
   },
   {
@@ -36,7 +36,7 @@ export default [
     contractNumber: "0012155326",
     date: "Sun May 13 2001 00:00:00 GMT+0200 (heure d’été d’Europe centrale)",
     agencyName: "Agence du centre",
-    adresse: "175 avenue de Marcq, Toulouse",
+    address: "175 avenue de Marcq, Toulouse",
     phone: "02 64 17 34 46",
   },
   {
@@ -44,7 +44,7 @@ export default [
     contractNumber: "0002052327",
     date: "Thu May 29 2008 00:00:00 GMT+0200 (heure d’été d’Europe centrale)",
     agencyName: "Agence du Pont neuf",
-    adresse: "127 rue de Paris, Toulouse",
+    address: "127 rue de Paris, Toulouse",
     phone: "01 23 47 38 63",
   },
   {
@@ -52,7 +52,7 @@ export default [
     contractNumber: "0020111483",
     date: "Wed May 02 2007 00:00:00 GMT+0200 (heure d’été d’Europe centrale)",
     agencyName: "Agence du Pont neuf",
-    adresse: "61 rue de Paris, Lyon",
+    address: "61 rue de Paris, Lyon",
     phone: "00 96 69 82 75",
   },
   {
@@ -60,7 +60,7 @@ export default [
     contractNumber: "0101224380",
     date: "Mon Jul 17 2000 00:00:00 GMT+0200 (heure d’été d’Europe centrale)",
     agencyName: "Agence de la place",
-    adresse: "48 boulevard de l'ouest, Toulouse",
+    address: "48 boulevard de l'ouest, Toulouse",
     phone: "04 80 46 82 74",
   },
   {
@@ -68,7 +68,7 @@ export default [
     contractNumber: "0112442713",
     date: "Thu Sep 19 2002 00:00:00 GMT+0200 (heure d’été d’Europe centrale)",
     agencyName: "Agence du Pont neuf",
-    adresse: "148 rue de Lille, Neuville",
+    address: "148 rue de Lille, Neuville",
     phone: "02 15 50 52 87",
   },
   {
@@ -76,7 +76,7 @@ export default [
     contractNumber: "0011246652",
     date: "Wed Sep 04 2002 00:00:00 GMT+0200 (heure d’été d’Europe centrale)",
     agencyName: "Agence Dupond",
-    adresse: "68 boulevard de l'ouest, Toulouse",
+    address: "68 boulevard de l'ouest, Toulouse",
     phone: "03 16 43 94 53",
   },
 ];
